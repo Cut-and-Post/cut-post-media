@@ -102,7 +102,9 @@ const config = createConfig([
     new webpack.ProgressPlugin(),
     new GoogleFontsPlugin({
       fonts: [
-        { family: "Open Sans", variants: ["400", "400italic", "600", "700"] }
+        { family: "Open Sans", variants: ["400"] },
+        { family: "Montserrat", variants: ["400", "700"]},
+        { family: "Poppins", variants: ["400"]}
       ]
     })
   ]),
