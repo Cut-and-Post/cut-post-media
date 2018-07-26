@@ -6,11 +6,11 @@ const PageTemplate = ({
   header, hero, children, footer, ...props
 }) => {
   return (
-    <div className="container-fluid" {...props}>
+    <React.Fragment>
       <header className="main-header">{header}</header>
       <main className="main-content">{children}</main>
       <footer className="main-footer">{footer}</footer>
-    </div>
+    </React.Fragment>
   )
 }
 

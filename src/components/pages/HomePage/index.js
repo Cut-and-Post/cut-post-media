@@ -9,9 +9,11 @@ const HomePage = () => {
       header={<Header />}
       footer={<Footer />}
     >
-      <Paragraph>Im the homepage.</Paragraph>
-      <Paragraph>Here is a link <Link href="http://google.com" target="_blank">Google</Link></Paragraph>
-      <Button className="btn btn-primary">fff</Button>
+      <div className="container">
+        <Paragraph>Im the homepage.</Paragraph>
+        <Paragraph>Here is a link <Link href="http://google.com" target="_blank">Google</Link></Paragraph>
+        <Button className="btn btn-primary">fff</Button>
+      </div>
     </PageTemplate>
   )
 }

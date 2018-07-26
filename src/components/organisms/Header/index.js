@@ -3,7 +3,9 @@ import { PrimaryNavigation } from 'components'
 
 const Header = (props) => {
   return (
-    <PrimaryNavigation />
+    <div className="container">
+      <PrimaryNavigation />
+    </div>
   )
 }
 

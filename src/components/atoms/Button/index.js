@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'react-router-dom/Link'
 
-import './bootstrap-btns'
+import './buttons'
 
 const Button = ({ type, ...props }) => {
   if (props.to) {
