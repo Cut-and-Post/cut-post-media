@@ -5,7 +5,8 @@ const devServer = require('@webpack-blocks/dev-server2')
 const splitVendor = require('webpack-blocks-split-vendor')
 const happypack = require('webpack-blocks-happypack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const GoogleFontsPlugin = require("google-fonts-webpack-plugin")
+const GoogleFontsPlugin = require("google-fonts-webpack-plugin");
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const {
   addPlugins, createConfig, entryPoint, env, setOutput,
@@ -52,8 +53,9 @@ const assetsProd = () => () => ({
               loader: 'css-loader',
               options: {
                 sourceMap: true,
+                minimize: true,
                 // modules: true,
-                localIdentName: '[name]__[local]__[hash:base64:5]',
+                // localIdentName: '[name]__[local]__[hash:base64:5]',
               },
             },
             {
@@ -126,6 +128,7 @@ const config = createConfig([
     assets(),
     addPlugins([
       new webpack.NamedModulesPlugin(),
+      new ExtractTextPlugin("style.css"),
       new HtmlWebpackPlugin({
         filename: 'index.html',
         template: path.join(process.cwd(), 'index.html'),
@@ -139,6 +142,12 @@ const config = createConfig([
     addPlugins([
       new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }),
       new ExtractTextPlugin("style.css"),
+      new OptimizeCssAssetsPlugin({
+        // assetNameRegExp: /\.optimize\.css$/g,
+        cssProcessor: require('cssnano'),
+        cssProcessorOptions: { safe: true, discardComments: { removeAll: true } },
+        canPrint: true
+      }),
       new HtmlWebpackPlugin({
         filename: 'index.html',
         template: path.join(process.cwd(), 'index.html'),
