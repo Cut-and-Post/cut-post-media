@@ -105,7 +105,7 @@ const config = createConfig([
     new GoogleFontsPlugin({
       fonts: [
         { family: "Open Sans", variants: ["400"] },
-        { family: "Montserrat", variants: ["400", "700"]},
+        { family: "Montserrat", variants: ["400", "700", "300"]},
         { family: "Poppins", variants: ["400"]}
       ]
     })
