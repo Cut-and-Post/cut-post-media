@@ -4,36 +4,52 @@ import { Link } from 'components'
 
 import './nav'
 
+const openNav = () => {
+  alert('ff')
+}
 
-const PrimaryNavigation = (props) => {
-  return (
-    <nav className="navbar navbar-expand-lg navbar-dark main-navigation">
-      <a className="navbar-brand" href="#">
-        <img src="images/logo.png" />
-      </a>
+class PrimaryNavigation extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      opened: false
+    }
+  }
 
-      <button className="navbar-toggler" type="button">
-        <span className="navbar-toggler-icon"></span>
-      </button>
+  toggleNav() {
+    this.setState({ opened: !this.state.opened });
+  }
 
-      <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-        <div className="navbar-nav">
-          <Link className="nav-item nav-link" to="/" exact activeClassName="active">Home</Link>
-          <div className="dropdown">
-            <Link className="dropdown-toggle" activeClassName="active" active={/about-us|portfolio/}>Agency</Link>
-            <div className="dropdown-menu">
-              <Link className="dropdown-item" to="/portfolio">Portfolio</Link>
-              <Link className="dropdown-item" to="/about-us">About Us</Link>
+  render() {
+    return (
+      <nav className="navbar navbar-expand-sm navbar-dark main-navigation">
+        <a className="navbar-brand" href="#">
+          <img src="images/logo.png" />
+        </a>
+
+        <button className={`navbar-toggler ${this.state.opened ? 'hide-nav' : ''}`} type="button" onClick={this.toggleNav.bind(this)}>
+          <span></span>
+        </button>
+
+        <div className={`collapse navbar-collapse navbar-collapse-md justify-content-end ${this.state.opened ? 'show' : ''}`} id="navbarNavAltMarkup">
+          <div className="navbar-nav">
+            <Link className="nav-item nav-link" to="/" exact activeClassName="active">Home</Link>
+            <div className="dropdown">
+              <Link className="nav-item nav-link dropdown-toggle" activeClassName="active" active={/about-us|portfolio/}>Agency</Link>
+              <div className="dropdown-menu">
+                <Link className="dropdown-item" to="/portfolio">Portfolio</Link>
+                <Link className="dropdown-item" to="/about-us">About Us</Link>
+              </div>
             </div>
+
+            <Link className="nav-item nav-link" to="/solutions" activeClassName="active">Solutions</Link>
+            <Link className="nav-item nav-link" to="/profiles" activeClassName="active">Profiles</Link>
+            <Link className="nav-item nav-link" to="/contact" activeClassName="active">Contact</Link>
           </div>
-          
-          <Link className="nav-item nav-link" to="/solutions" activeClassName="active">Solutions</Link>
-          <Link className="nav-item nav-link" to="/profiles" activeClassName="active">Profiles</Link>
-          <Link className="nav-item nav-link" to="/contact" activeClassName="active">Contact</Link>
         </div>
-      </div>
-    </nav>
-  )
+      </nav>
+    )
+  }
 }
 
 PrimaryNavigation.propTypes = {
