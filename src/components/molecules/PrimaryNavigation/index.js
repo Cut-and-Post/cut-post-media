@@ -4,14 +4,6 @@ import { Link } from 'components'
 
 import './nav'
 
-const activeLink = (match, location) => {
-  console.log(location)
-  if (!match) {
-    return false
-  }
-
-  return (location.pathname === '/portfolio' || location.pathname === '/about-us')
-}
 
 const PrimaryNavigation = (props) => {
   return (
@@ -27,14 +19,17 @@ const PrimaryNavigation = (props) => {
       <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
         <div className="navbar-nav">
           <Link className="nav-item nav-link" to="/" exact activeClassName="active">Home</Link>
-          <Link className="nav-item nav-link dropdown-toggle" to="/portfolio" isActive={activeLink} activeClassName="active">Agency</Link>
-          <div className="dropdown-menu">
-            <Link className="dropdown-item" to="/portfolio">Portfolio</Link>
-            <Link className="dropdown-item" to="/about-us">About Us</Link>
+          <div className="dropdown">
+            <Link className="dropdown-toggle" activeClassName="active" active={/about-us|portfolio/}>Agency</Link>
+            <div className="dropdown-menu">
+              <Link className="dropdown-item" to="/portfolio">Portfolio</Link>
+              <Link className="dropdown-item" to="/about-us">About Us</Link>
+            </div>
           </div>
-          <Link className="nav-item nav-link" to="/sample-page" activeClassName="active">Solutions</Link>
-          <Link className="nav-item nav-link" to="/sample-page" activeClassName="active">Profiles</Link>
-          <Link className="nav-item nav-link" to="/sample-page" activeClassName="active">Contact</Link>
+          
+          <Link className="nav-item nav-link" to="/solutions" activeClassName="active">Solutions</Link>
+          <Link className="nav-item nav-link" to="/profiles" activeClassName="active">Profiles</Link>
+          <Link className="nav-item nav-link" to="/contact" activeClassName="active">Contact</Link>
         </div>
       </div>
     </nav>

@@ -1,8 +1,8 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { GenericPage } from 'components'
+import { SolutionsPage } from 'components'
 
-storiesOf('GenericPage', module)
+storiesOf('SolutionsPage', module)
   .add('default', () => (
-    <GenericPage />
+    <SolutionsPage />
   ))
