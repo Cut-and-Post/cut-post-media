@@ -3,11 +3,6 @@ import PropTypes from 'prop-types'
 import { Link } from 'components'
 
 import './nav'
-
-const openNav = () => {
-  alert('ff')
-}
-
 class PrimaryNavigation extends React.Component {
   constructor() {
     super()
@@ -24,7 +19,7 @@ class PrimaryNavigation extends React.Component {
     return (
       <nav className="navbar navbar-expand-sm navbar-dark main-navigation">
         <a className="navbar-brand" href="#">
-          <img src="images/logo.png" />
+          <img src="/images/logo.png" />
         </a>
 
         <button className={`navbar-toggler ${this.state.opened ? 'hide-nav' : ''}`} type="button" onClick={this.toggleNav.bind(this)}>
@@ -37,8 +32,8 @@ class PrimaryNavigation extends React.Component {
             <div className="dropdown">
               <Link className="nav-item nav-link dropdown-toggle" activeClassName="active" active={/about-us|portfolio/}>Agency</Link>
               <div className="dropdown-menu">
-                <Link className="dropdown-item" to="/portfolio">Portfolio</Link>
-                <Link className="dropdown-item" to="/about-us">About Us</Link>
+                <Link className="dropdown-item" to="/agency/portfolio">Portfolio</Link>
+                <Link className="dropdown-item" to="/agency/about-us">About Us</Link>
               </div>
             </div>
 
