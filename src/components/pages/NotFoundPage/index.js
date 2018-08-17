@@ -6,7 +6,7 @@ const NotFoundPage = () => {
   return (
     <PageTemplate header={<Header />} footer={<Footer />}>
       <div className="container">
-        <Heading level={4}>404 Not Found</Heading>
+        <Heading level={1}>404 Not Found</Heading>
       </div>
       
     </PageTemplate>

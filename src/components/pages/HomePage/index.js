@@ -5,10 +5,7 @@ import { PageTemplate, Header, Footer, Link, Button } from 'components'
 
 const HomePage = () => {
   return (
-    <PageTemplate
-      header={<Header />}
-      footer={<Footer />}
-    >
+    <PageTemplate header={<Header />} footer={<Footer />}>
       <div className="container">
         <p>Im the homepage.</p>
         <p>Here is a link <Link href="http://google.com" target="_blank">Google</Link></p>
