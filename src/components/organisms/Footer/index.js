@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, Icon, Navs, Heading } from 'components'
 
 import './footer'
-class Footer extends React.Component {
+export default class Footer extends React.Component {
   constructor() {
     super()
 
@@ -76,5 +76,3 @@ class Footer extends React.Component {
     )
   }
 }
-
-export default Footer

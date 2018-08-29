@@ -8,7 +8,7 @@ const Hero = (props) => {
   const bgImg = {
     backgroundImage: `url(/images/${props.bg})`
   }
-
+  
   return (
     <div className="page-hero jumbotron jumbotron-fluid" style={bgImg}>
       <div className="container">
