@@ -29,8 +29,9 @@ class PrimaryNavigation extends React.Component {
         <div className={`collapse navbar-collapse navbar-collapse-md justify-content-end ${this.state.opened ? 'show' : ''}`} id="navbarNavAltMarkup">
           <div className="navbar-nav">
             <Link className="nav-item nav-link" to="/" exact activeClassName="active">Home</Link>
-            <Link className="nav-item nav-link" to="/agency/portfolio" activeClassName="active">Portfolio</Link>
             <Link className="nav-item nav-link" to="/agency/about-us" activeClassName="active">About Us</Link>
+            <Link className="nav-item nav-link" to="/agency/portfolio" activeClassName="active">Portfolio</Link>
+            
 
             {/* <div className="dropdown">
               <Link className="nav-item nav-link dropdown-toggle" activeClassName="active" active={/about-us|portfolio/}>Agency</Link>
@@ -40,8 +41,7 @@ class PrimaryNavigation extends React.Component {
               </div>
             </div> */}
 
-            <Link className="nav-item nav-link" to="/solutions" activeClassName="active">Solutions</Link>
-            <Link className="nav-item nav-link" to="/profiles" activeClassName="active">Profiles</Link>
+            <Link className="nav-item nav-link" to="/profiles" activeClassName="active">Staffing</Link>
             <Link className="nav-item nav-link" to="/contact" activeClassName="active">Contact</Link>
           </div>
         </div>

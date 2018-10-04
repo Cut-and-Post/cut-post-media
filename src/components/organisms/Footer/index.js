@@ -30,7 +30,7 @@ export default class Footer extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div className="container py-4">
+        {/* <div className="container py-4">
           <div className="row">
             <div className="footer-logo col-3">
               <img className="mb-3" src="/images/logo.png" />
@@ -57,7 +57,7 @@ export default class Footer extends React.Component {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="sub-footer">
           <div className="container">

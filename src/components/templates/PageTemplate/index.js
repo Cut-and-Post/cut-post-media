@@ -2,21 +2,25 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import { Header, Footer } from 'components'
+
 const PageTemplate = ({
   header, hero, children, footer, ...props
 }) => {
   return (
     <React.Fragment>
-      <header className="main-header">{header}</header>
+      <header className="main-header">
+        <Header/>
+      </header>
       <main className="main-content">{children}</main>
-      <footer className="main-footer">{footer}</footer>
+      <footer className="main-footer">
+        <Footer />
+      </footer>
     </React.Fragment>
   )
 }
 
 PageTemplate.propTypes = {
-  header: PropTypes.node.isRequired,
-  footer: PropTypes.node.isRequired,
   children: PropTypes.any.isRequired,
 }
 

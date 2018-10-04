@@ -8,7 +8,7 @@ import './text-block'
 
 const TextBlock = (props) => {
   return (
-    <div className={`text-block text-${props.align}`}>
+    <div className={`text-block text-${props.align} ${props.className}`}>
       <div className="container">
         <Heading className="text-block__title" level={props.titleLevel}>{props.title}</Heading>
         <p>{props.copy}</p>

@@ -7,7 +7,6 @@ class FilteredList extends React.Component {
     super(props)
 
     this.updateChecked = this.updateChecked.bind(this);
-    this.search = this.search.bind(this);
 
     this.props.filters.map(i => {
       obj[i.name] = []
