@@ -69,16 +69,16 @@ const AboutUsPage = () => {
 
           <Row className="mt-5 pt-4">
             <Column md={{span: 6}}>
-              <blockquote class="blockquote">
-                <p class="mb-0">"The Cut & Post team always demonstrates a deep understanding of our voice, and their knowledge of our brand really shows in the final product..."</p>
-                <footer class="blockquote-footer">Aldo Palma-Saracho<br />Senior Director of Marketing, NBC Universal</footer>
+              <blockquote className="blockquote">
+                <p className="mb-0">"The Cut & Post team always demonstrates a deep understanding of our voice, and their knowledge of our brand really shows in the final product..."</p>
+                <footer className="blockquote-footer">Aldo Palma-Saracho<br />Senior Director of Marketing, NBC Universal</footer>
               </blockquote>
             </Column>
 
             <Column md={{ span: 6 }}>
-              <blockquote class="blockquote">
-                <p class="mb-0">"The social media space is all about last minute projects with quick turnarounds, and Cut & Post always delivers compelling content in record time!"</p>
-                <footer class="blockquote-footer">Tatiana Holifield<br />Senior Director of Social Media, Viacom</footer>
+              <blockquote className="blockquote">
+                <p className="mb-0">"The social media space is all about last minute projects with quick turnarounds, and Cut & Post always delivers compelling content in record time!"</p>
+                <footer className="blockquote-footer">Tatiana Holifield<br />Senior Director of Social Media, Viacom</footer>
               </blockquote>
             </Column>
           </Row>
