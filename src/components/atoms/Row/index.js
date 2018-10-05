@@ -1,9 +1,9 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
 
-const Row = (props) => {
+const Row = ({className, ...props}) => {
   return (
-    <div className={`row ${props.className}`}>
+    <div className={`row${className ? ' ' + className : ''}`}>
       {props.children}
     </div>
   )

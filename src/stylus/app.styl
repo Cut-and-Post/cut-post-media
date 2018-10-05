@@ -4,6 +4,7 @@
 .container
   max-width 1280px
 
+/* about us */
 .about-us__hero
   text-align: center
   height: 386px
@@ -41,7 +42,6 @@
   background: -webkit-radial-gradient(120% 26%, ellipse cover, rgba(98,118,226,1) 0%,rgba(255,255,255,0) 70%); /* Chrome10-25,Safari5.1-6 */
   background: radial-gradient(at 120% 26%, rgba(98,118,226,1) 0%,rgba(255,255,255,0) 70%);
   
-
   .text-block h2
     font-size 60px
 
@@ -49,3 +49,67 @@
     max-width: 100%
     display block
     margin 50px 0
+
+/* portfolio */
+.filtered-list 
+  background: -moz-radial-gradient(120% 26%, ellipse cover, rgba(98,118,226,1) 0%, rgba(255,255,255,0) 70%); /* FF3.6-15 */
+  background: -webkit-radial-gradient(120% 26%, ellipse cover, rgba(98,118,226,1) 0%,rgba(255,255,255,0) 70%); /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(at 120% 26%, rgba(98,118,226,1) 0%,rgba(255,255,255,0) 70%);
+
+  .thumb-col
+    padding-top 15px
+    padding-bottom 15px
+
+  img
+    max-width 100%
+
+.filter-form
+  background-color #212223
+
+  input
+    position: absolute
+    margin: 4px 0
+
+  label
+    padding-left: 15px;
+
+.ReactModal__Content.modal
+  display: block
+  max-width 700px
+  height auto
+  right auto
+  bottom auto
+  top 50%
+  left 50%
+  width 100%
+  transform: translate(-50%, -50%)
+  color: #fff
+
+  .close
+    background none
+    color #fff
+    border 0
+    font-size 22px
+
+  .modal-header
+    border 0
+  
+  .modal-body
+    padding-top 0
+  
+
+  .modal-content
+    background: #000
+
+.ReactModal__Overlay.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .8)
+}
+
+.ReactModal__Body--open
+  overflow hidden
+  height 100%

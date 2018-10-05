@@ -14,6 +14,7 @@ class Column extends React.Component {
     const prefix = 'col'
     const spans = [];
     const classes = [];
+    let classNames = '';
 
     DEVICE_SIZES.forEach(brkPoint => {
       let propValue = props[brkPoint];
@@ -40,7 +41,11 @@ class Column extends React.Component {
       spans.push(prefix); // plain 'col'
     }
 
-    const classNames = spans.join(' ') + classes.join(' ') + ' ' + props.className;
+    classNames = spans.join(' ') + classes.join(' ')
+
+    if (className) {
+      classNames += ` ${className}`
+    }
 
     return (
       <div className={classNames}>
