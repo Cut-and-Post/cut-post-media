@@ -1,6 +1,7 @@
 import React from 'react'
 import { Row, Column, Label, Input, Heading } from 'components'
 import Modal from 'react-modal'
+import VideoPlayer from 'react-player'
 
 Modal.setAppElement('#app');
 class FilteredList extends React.Component {
@@ -22,8 +23,20 @@ class FilteredList extends React.Component {
       modalProducer: {}
     });
 
-    this.handleOpenModal = this.handleOpenModal.bind(this);
-    this.handleCloseModal = this.handleCloseModal.bind(this);
+    this.handleOpenModal = this.handleOpenModal.bind(this)
+    this.handleCloseModal = this.handleCloseModal.bind(this)
+    this.setModal = this.setModal.bind(this)
+  }
+
+  setModal(item) {
+    this.setState({
+      modalTitle: item.name,
+      modalVideo: item.videoLink,
+      modalEditor: item.editor,
+      modalProducer: item.producer
+    })
+
+    this.handleOpenModal();
   }
 
   handleOpenModal() {
@@ -56,6 +69,7 @@ class FilteredList extends React.Component {
     }
   }
 
+  // make more dynamic
   filteredItems(items) {
     const genre = items.filter(role =>
       role.genre.find(group => this.state.genre.includes(group))
@@ -74,6 +88,9 @@ class FilteredList extends React.Component {
   }
 
   render() {
+    const { items, filters } = this.props
+    const { modalOpened, modalTitle, modalVideo, modalProducer, modalEditor } = this.state
+
     return (
       <React.Fragment>
         <form className="filter-form py-3">
@@ -81,7 +98,7 @@ class FilteredList extends React.Component {
             {/* {JSON.stringify(this.state)} */}
             <Row>
               {
-                this.props.filters.map(filter => {
+                filters.map(filter => {
                   return <Column md={{span: 6}} key={filter.name}>
                     <Heading level={4}>{filter.title}</Heading>
                     <Row>
@@ -105,9 +122,9 @@ class FilteredList extends React.Component {
           <div className="container">
             <Row>
               {
-                (this.props.items.length < 1) ? 'Loading' : this.filteredItems(this.props.items).map(i => {
+                (items.length < 1) ? 'Loading' : this.filteredItems(items).map(i => {
                   return <Column sm={{span: 6}} md={{span: 4}} lg={{span: 3}} className="thumb-col" key={i.name}>
-                    <div onClick={this.handleOpenModal}>
+                    <div onClick={() => this.setModal(i)}>
                       <img src={`/images/${i.thumb}`} />
                     </div>
                   </Column>
@@ -118,20 +135,36 @@ class FilteredList extends React.Component {
         </div>
 
         <Modal 
-          isOpen={this.state.modalOpened}
+          isOpen={modalOpened}
           onRequestClose={this.handleCloseModal}
           className="modal"
           overlayClassName="overlay"
         >
           <div className="modal-content">
             <div className="modal-header">
-              <h5 className="modal-title">Modal title</h5>
+              <h5 className="modal-title">{modalTitle}</h5>
               <button type="button" className="close" onClick={this.handleCloseModal}  aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div className="modal-body">
-              <p>Modal body text goes here.</p>
+              <VideoPlayer url={modalVideo} playing />
+              <div className="video-info">
+                {
+                  Object.keys(modalEditor).length > 0 && 
+                  <div class="video-info-item">
+                    <strong>Editor: </strong>
+                    <span>{modalEditor.name}</span>
+                  </div>
+                }
+                {
+                  Object.keys(modalProducer).length > 0 &&
+                  <div class="video-info-item">
+                    <strong>Producer: </strong>
+                    <span>{modalProducer.name}</span>
+                  </div>
+                }
+              </div>
             </div>
           </div>
         </Modal>

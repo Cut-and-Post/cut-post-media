@@ -10,7 +10,7 @@ const Hero = (props) => {
   }
   
   return (
-    <div className={`page-hero jumbotron jumbotron-fluid ${props.className}`} style={bgImg}>
+    <div className={`page-hero jumbotron jumbotron-fluid${props.className ? ' ' + props.className : ''}`} style={bgImg}>
       <div className="container">
         {props.children}
         {props.title && <Heading className="page-hero-title" level={2}>{props.title}</Heading>}

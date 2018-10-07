@@ -101,6 +101,7 @@
     "react-dom": "^16.0.0",
     "react-hot-loader": "^3.1.1",
     "react-modal": "^3.1.11",
+    "react-player": "^1.6.6",
     "react-redux": "^5.0.1",
     "react-router-dom": "^4.1.1",
     "redux": "^3.6.0",

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { PageTemplate, Header, Footer, Hero, TextBlock, FilteredList } from 'components'
+import { PageTemplate, Hero, TextBlock, FilteredList } from 'components'
 import api from 'services/api'
 export default class PortfolioPage extends React.Component {
   constructor() {
@@ -60,7 +60,7 @@ export default class PortfolioPage extends React.Component {
 
   render() {
     return (
-      <PageTemplate header={<Header />} footer={<Footer />}>
+      <PageTemplate>
         <Hero title="Portfolio" bg="Portfolio.png" />
         <TextBlock
           className="py-5"

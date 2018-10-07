@@ -2,7 +2,7 @@
   {
     "name": "Kendra on Top",
     "channel": "WEtv",
-    "videoLink": "",
+    "videoLink": "https://vimeo.com/90509568",
     "thumb": "kendraOnTop.png",
     "purpose": [
       "show launches"
@@ -16,7 +16,7 @@
   {
     "name": "Fear the Walking Dead",
     "channel": "AMC",
-    "videoLink": "",
+    "videoLink": "https://vimeo.com/90509568",
     "thumb": "fearWalkingDead.png",
     "purpose": [
       "behind the scenes",
@@ -34,7 +34,7 @@
   {
     "name": "Love and Hip Hop Holywood",
     "channel": "VH1",
-    "videoLink": "daytimeDiva.png",
+    "videoLink": "https://vimeo.com/169599296",
     "thumb": "daytimeDiva.png",
     "purpose": [
       "show launches"
@@ -50,7 +50,7 @@
   {
     "name": "Daytime Divas",
     "channel": "VH1",
-    "videoLink": "",
+    "videoLink": "https://vimeo.com/169599296",
     "thumb": "daytimeDiva.png",
     "purpose": [],
     "genre": [
@@ -66,7 +66,7 @@
   {
     "name": "Nancy Nightmare",
     "channel": "Lifetime",
-    "videoLink": "",
+    "videoLink": "https://vimeo.com/169599296",
     "thumb": "nancyNightmare.png",
     "purpose": [
       "behind the scenes",
