@@ -121,12 +121,6 @@ const config = createConfig([
       stats: 'errors-only',
       historyApiFallback: { index: publicPath },
       headers: { 'Access-Control-Allow-Origin': '*' },
-      proxy: {
-        '/get-portfolio': {
-          target: 'http://localhost:5000',
-          secure: false
-        }
-      },
       host,
       port,
     }),
