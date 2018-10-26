@@ -1,17 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Heading = ({ level, children, ...props }) => {
-  return React.createElement(`h${level}`, props, children)
-};
+const defaultProps = {
+  level: 1,
+}
 
-Heading.propTypes = {
+const propTypes = {
   level: PropTypes.number,
   children: PropTypes.node,
 }
 
-Heading.defaultProps = {
-  level: 1,
+const Heading = ({ level, children, ...props }) => {
+  return React.createElement(`h${level}`, props, children)
 }
+
+Heading.defaultProps = defaultProps
+Heading.propTypes = propTypes
 
 export default Heading

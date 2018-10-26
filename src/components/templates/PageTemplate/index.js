@@ -4,24 +4,28 @@ import PropTypes from 'prop-types'
 
 import { Header, Footer } from 'components'
 
-const PageTemplate = ({
-  header, hero, children, footer, ...props
-}) => {
-  return (
-    <React.Fragment>
-      <header className="main-header">
-        <Header/>
-      </header>
-      <main className="main-content">{children}</main>
-      <footer className="main-footer">
-        <Footer />
-      </footer>
-    </React.Fragment>
-  )
+const propTypes = {
+  children: PropTypes.any.isRequired,
+  name: PropTypes.string.isRequired
 }
 
-PageTemplate.propTypes = {
-  children: PropTypes.any.isRequired,
+class PageTemplate extends React.Component {
+  componentDidMount() {
+    document.body.classList.remove('home-page', 'about-us-page', 'portfolio-page', 'contact-us-page')
+    document.body.classList.add(`${this.props.name}-page`)
+  }
+
+  render() {
+    return (
+      <React.Fragment>        
+        <Header />
+        <main className="main-content">{this.props.children}</main>
+        <Footer />
+      </React.Fragment>
+    )
+  }
 }
+
+PageTemplate.propTypes = propTypes
 
 export default PageTemplate

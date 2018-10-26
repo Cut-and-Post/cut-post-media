@@ -1,13 +1,16 @@
 import React from 'react'
+
 import { PrimaryNavigation } from 'components'
 
-import './header'
+import './header.styl'
 
-const Header = (props) => {
+const Header = () => {
   return (
-    <div className="container">
-      <PrimaryNavigation />
-    </div>
+    <header className="main-header">
+      <div className="container">
+        <PrimaryNavigation />
+      </div>
+    </header>
   )
 }
 

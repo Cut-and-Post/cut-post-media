@@ -1,6 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+const defaultProps = {
+  type: 'text',
+}
+
+const propTypes = {
+  type: PropTypes.string,
+  invalid: PropTypes.bool,
+}
+
 const Input = ({ ...props }) => {
   if (props.type === 'textarea') {
     return <textarea {...props} />
@@ -10,13 +19,7 @@ const Input = ({ ...props }) => {
   return <input {...props} />
 }
 
-Input.propTypes = {
-  type: PropTypes.string,
-  invalid: PropTypes.bool,
-}
-
-Input.defaultProps = {
-  type: 'text',
-}
+Input.defaultProps = defaultProps
+Input.propTypes = propTypes
 
 export default Input

@@ -9,11 +9,6 @@ it('renders children when passed in', () => {
   expect(wrapper.contains('test')).toBe(true)
 })
 
-it('renders props when passed in', () => {
-  const wrapper = wrap({ id: 'foo' })
-  expect(wrapper.find({ id: 'foo' })).toHaveLength(1)
-})
-
 it('renders h1 by default', () => {
   const wrapper = wrap()
   expect(wrapper.find('h1')).toHaveLength(1)

@@ -1,116 +1,110 @@
 import React from 'react'
-import { Row, Column, Label, Input, Heading } from 'components'
-import Modal from 'react-modal'
-import VideoPlayer from 'react-player'
+import PropTypes from 'prop-types'
+import MultiSelect from '@khanacademy/react-multi-select';
 
-Modal.setAppElement('#app');
+import { Row, Column, Heading } from 'components'
+
+import './filteredlist'
+
+const propTypes = {
+  items: PropTypes.array,
+  filters: PropTypes.array,
+  itemClick: PropTypes.func,
+}
+
+const filtered = (items, filters) => {
+  const filterKeys = Object.keys(filters);
+  let arr = [];
+
+  items.forEach(role => {
+    filterKeys.forEach(key => {
+      if (role[key].find(group => filters[key].includes(group)) !== undefined) {
+        arr.push(role)
+      }
+    })
+  })
+  
+  return arr.filter((i, index, self) =>
+    index === self.findIndex((t) => (t.name === i.name))
+  );
+}
+
 class FilteredList extends React.Component {
   constructor(props) {
     let obj = {};
     super(props)
 
-    this.updateChecked = this.updateChecked.bind(this);
+    this.filterNames = this.props.filters.map(i => i.name)
+    this.handleSelectedChanged = this.handleSelectedChanged.bind(this)
 
     this.props.filters.map(i => {
       obj[i.name] = []
     })
 
     this.state = Object.assign(obj, {
-      modalOpened: false,
-      modalTitle: '',
-      modalVideo: '',
-      modalEditor: {},
-      modalProducer: {}
+      activeGroup: '',
+      selected: []
     });
-
-    this.handleOpenModal = this.handleOpenModal.bind(this)
-    this.handleCloseModal = this.handleCloseModal.bind(this)
-    this.setModal = this.setModal.bind(this)
   }
-
-  setModal(item) {
-    this.setState({
-      modalTitle: item.name,
-      modalVideo: item.videoLink,
-      modalEditor: item.editor,
-      modalProducer: item.producer
-    })
-
-    this.handleOpenModal();
-  }
-
-  handleOpenModal() {
-    this.setState({ modalOpened: true });
-  }
-
-  handleCloseModal() {
-    this.setState({ modalOpened: false });
-  }
-
-  updateChecked(event) {
-    const checkedValue = event.target.value;
-    const name = event.target.name;
-    let checkedArr = this.state[name];
-    let valueIndex = 0;
-
-    if (event.target.checked) {
-      checkedArr.push(checkedValue);
-
+  
+  handleSelectedChanged(selected) {
+    if (selected.length < 1) {
       this.setState({
-        [name]: checkedArr
-      });
+        [this.state.activeGroup]: selected
+      })
     } else {
-      valueIndex = checkedArr.indexOf(checkedValue);
-      checkedArr.splice(valueIndex, 1);
-
       this.setState({
-        [name]: checkedArr
+        [selected[0].group]: selected,
+        activeGroup: selected[0].group
       });
     }
   }
 
   // make more dynamic
   filteredItems(items) {
-    const genre = items.filter(role =>
-      role.genre.find(group => this.state.genre.includes(group))
-    );
-    const purpose = items.filter(role =>
-      role.purpose.find(group => this.state.purpose.includes(group))
-    )
+    const filters = {}
+
+    for (let i = 0; i < this.filterNames.length; i++) {
+      filters[this.filterNames[i]] = this.state[this.filterNames[i]].map(i => i.value);
+    }
 
     if (this.state.genre.length < 1 && this.state.purpose.length < 1) {
       return items;
     }
 
-    return genre.concat(purpose).filter((i, index, self) =>
-      index === self.findIndex((t) => (t.name === i.name))
-    )
+    return filtered(items, filters);
+  }
+
+  getOptions(name, items) {
+    return items.map(s => ({
+      value: Object.assign(s, {
+        group: name,
+      }),
+      label: s.value,
+    }));
   }
 
   render() {
     const { items, filters } = this.props
-    const { modalOpened, modalTitle, modalVideo, modalProducer, modalEditor } = this.state
-
+        
     return (
       <React.Fragment>
-        <form className="filter-form py-3">
+        <form className="filter-form py-4">
           <div className="container">
-            {/* {JSON.stringify(this.state)} */}
             <Row>
+              <Column sm={{ span: 12 }}>
+                <Heading level={4} className="mb-0">Filter:</Heading>
+              </Column>
               {
                 filters.map(filter => {
-                  return <Column md={{span: 6}} key={filter.name}>
-                    <Heading level={4}>{filter.title}</Heading>
-                    <Row>
-                      {
-                        filter.items.map(item => {
-                          return <div className="col" key={item.value.replace(' ', '-')}>
-                            <Input onChange={this.updateChecked} type="checkbox" name={filter.name} id={item.value.replace(' ', '-')} value={item.value} />
-                            <Label htmlFor={item.value.replace(' ', '-')}>&nbsp;{item.value}</Label>
-                          </div>
-                        })
-                      }
-                    </Row>
+                  return <Column md={{span: 6}} className="pt-4" key={filter.name}>
+                    <Heading level={6}>{filter.title}</Heading>
+                    <MultiSelect
+                      onSelectedChanged={this.handleSelectedChanged}
+                      selected={this.state[filter.name]}
+                      options={this.getOptions(filter.name, filter.items)}
+                      selectAllLabel={`All ${filter.name}s`}
+                    />
                   </Column>
                 })
               }
@@ -124,7 +118,7 @@ class FilteredList extends React.Component {
               {
                 (items.length < 1) ? 'Loading' : this.filteredItems(items).map(i => {
                   return <Column sm={{span: 6}} md={{span: 4}} lg={{span: 3}} className="thumb-col" key={i.name}>
-                    <div onClick={() => this.setModal(i)}>
+                    <div onClick={() => this.props.itemClick(i)}>
                       <img src={`/images/${i.thumb}`} />
                     </div>
                   </Column>
@@ -133,44 +127,11 @@ class FilteredList extends React.Component {
             </Row>
           </div>
         </div>
-
-        <Modal 
-          isOpen={modalOpened}
-          onRequestClose={this.handleCloseModal}
-          className="modal"
-          overlayClassName="overlay"
-        >
-          <div className="modal-content">
-            <div className="modal-header">
-              <h5 className="modal-title">{modalTitle}</h5>
-              <button type="button" className="close" onClick={this.handleCloseModal}  aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div className="modal-body">
-              <VideoPlayer url={modalVideo} playing />
-              <div className="video-info">
-                {
-                  Object.keys(modalEditor).length > 0 && 
-                  <div class="video-info-item">
-                    <strong>Editor: </strong>
-                    <span>{modalEditor.name}</span>
-                  </div>
-                }
-                {
-                  Object.keys(modalProducer).length > 0 &&
-                  <div class="video-info-item">
-                    <strong>Producer: </strong>
-                    <span>{modalProducer.name}</span>
-                  </div>
-                }
-              </div>
-            </div>
-          </div>
-        </Modal>
       </React.Fragment>
     )
   }
 }
+
+FilteredList.propTypes = propTypes
 
 export default FilteredList

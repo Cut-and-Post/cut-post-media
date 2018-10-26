@@ -8,10 +8,10 @@
       "show launches"
     ],
     "genre": [],
-    "producer": {
-      "name": "Joe Schmo"
-    },
-    "editor": {}
+    "producer": [
+      "Joe Schmo"
+    ],
+    "editor": []
   },
   {
     "name": "Fear the Walking Dead",
@@ -26,10 +26,10 @@
       "thrillers",
       "sci-fi"
     ],
-    "producer": {
-      "name": "Lisa Smith"
-    },
-    "editor": {}
+    "producer": [
+      "Lisa Smith"
+    ],
+    "editor": []
   },
   {
     "name": "Love and Hip Hop Holywood",
@@ -40,12 +40,12 @@
       "show launches"
     ],
     "genre": [],
-    "producer": {
-      "name": "Lisa Smith"
-    },
-    "editor": {
-      "name": "John Smith"
-    }
+    "producer": [
+      "Lisa Smith"
+    ],
+    "editor": [
+      "John Smith"
+    ]
   },
   {
     "name": "Daytime Divas",
@@ -58,10 +58,10 @@
       "comedy",
       "drama"
     ],
-    "producer": {},
-    "editor": {
-      "name": "Nancy Ling"
-    }
+    "producer": [],
+    "editor": [
+      "Nancy Ling"
+    ]
   },
   {
     "name": "Nancy Nightmare",
@@ -76,9 +76,9 @@
       "thrillers",
       "sci-fi"
     ],
-    "producer": {},
-    "editor": {
-      "name": "Rick Stein"
-    }
+    "producer": [],
+    "editor": [
+      "Rick Stein"
+    ]
   }
 ]

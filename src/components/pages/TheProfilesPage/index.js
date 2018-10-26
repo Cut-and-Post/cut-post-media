@@ -12,7 +12,7 @@ export default class TheProfilesPage extends React.Component {
 
   render() {
     return (
-      <PageTemplate>
+      <PageTemplate name="profiles">
         <Hero
           title="Find Your Freelancer"
           bg="ContactUs.png"

@@ -1,7 +1,9 @@
 import React from 'react'
-import { Link, Icon, Navs, Heading } from 'components'
 
-import './footer'
+import { Navs, Row, Column } from 'components'
+
+import './footer.styl'
+
 export default class Footer extends React.Component {
   constructor() {
     super()
@@ -29,50 +31,21 @@ export default class Footer extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
-        {/* <div className="container py-4">
-          <div className="row">
-            <div className="footer-logo col-3">
-              <img className="mb-3" src="/images/logo.png" />
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla faucibus egestas elit, at eleifend elit ornare ut.</p>
-            </div>
-
-            <div className="footer-nav col-9">
-              <div className="row">
-                <div className="col">
-                  <Heading className="footer-header" level={6}>company</Heading>
-                </div>
-
-                <div className="col">
-                  <Heading className="footer-header" level={6}>resources</Heading>
-                </div>
-
-                <div className="col">
-                  <Heading className="footer-header" level={6}>support</Heading>
-                </div>
-
-                <div className="col">
-                  <Heading className="footer-header" level={6}>social</Heading>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> */}
-
+      <footer className="main-footer">
         <div className="sub-footer">
           <div className="container">
-            <div className="row">
-              <div className="col-12 col-sm-4 text-center text-sm-left">
+            <Row>
+              <Column sm={{ span: 4 }} className="text-center text-sm-left">
                 <p className="copyright-text">Copyright &copy; {this.copyrightYear()}</p>
-              </div>
+              </Column>
 
-              <div className="col-12 col-sm-8">
+              <Column sm={{ span: 8 }}>
                 <Navs className="justify-content-center justify-content-sm-end" items={this.items}></Navs>
-              </div>
-            </div>
+              </Column>
+            </Row>
           </div>
         </div>
-      </React.Fragment>
+      </footer>
     )
   }
 }

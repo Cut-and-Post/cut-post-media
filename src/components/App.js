@@ -1,16 +1,16 @@
 import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import { HomePage, SolutionsPage, NotFoundPage, AboutUsPage, PortfolioPage, TheProfilesPage, ContactPage } from 'components'
-import { GoogleTagManager } from 'containers'
+// import { GoogleTagManager } from 'containers'
 
 const App = () => {
   return (
     <React.Fragment>
-      <GoogleTagManager />
+      {/* <GoogleTagManager /> */}
       <Switch>
         <Route path="/" component={HomePage} exact />
         <Route path="/solutions" component={SolutionsPage} />
-        <Redirect exact from='/agency' to='/agency/portfolio' />
+        <Redirect exact from="/agency" to="/agency/portfolio" />
         <Route
           path="/agency"
           render={({ match: { url } }) => (

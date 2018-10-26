@@ -4,11 +4,10 @@ import { PageTemplate, Heading } from 'components'
 
 const NotFoundPage = () => {
   return (
-    <PageTemplate>
+    <PageTemplate name="not-found">
       <div className="container">
         <Heading level={1}>404 Not Found</Heading>
       </div>
-      
     </PageTemplate>
   )
 }

@@ -1,57 +1,68 @@
 import React from 'react'
 
-import { PageTemplate, Hero, Button, Label, Input } from 'components'
+import { PageTemplate, Hero, Button, Label, Input, Column, Row, Heading } from 'components'
+
+import './contact-us.styl'
+
+const ContactForm = [
+  {
+    "name": "name",
+    "type": "text"
+  },
+  {
+    "name": "email",
+    "type": "email"
+  },
+  {
+    "name": "phone",
+    "type": "tel"
+  }
+]
 
 const ContactPage = () => {
   return (
-    <PageTemplate>
+    <PageTemplate name="contact-us">
       <Hero className="short__hero" title="Contact Us" bg="ContactUs.png" />
 
       <div className="container">
         <div className="contact-us-info">
-          <h6>Address</h6>
+          <Heading level={6}>Address</Heading>
 
           <address>
             <p>420 West 42nd Street, 23rd Floor<br />New York, NY 10036</p>
           </address>
 
-          <h6>Phone</h6>
+          <Heading level={6}>Phone</Heading>
           <p>646.641.0423</p>
 
-          <h6>Email</h6>
+          <Heading level={6}>Email</Heading>
           <p>Clients<br/>clients@cutandpostmedia.com<br/><br/>Freelancers<br/>freelancers@cutandpostmedia.com</p>
         </div>
         
         <form className="contact-form">
-          <div className="form-group row">
-            <label htmlFor="inputEmail3" className="col col-form-label">name</label>
-            <div className="col-sm-10">
-              <input type="text" required className="form-control" id="inputEmail3" />
-            </div>
-          </div>
-          <div className="form-group row">
-            <label htmlFor="inputPassword3" className="col col-form-label">email</label>
-            <div className="col-sm-10">
-              <input type="email" required className="form-control" id="inputPassword3" />
-            </div>
-          </div>
-          <div className="form-group row">
-            <label htmlFor="inputPassword3" className="col col-form-label">phone</label>
-            <div className="col-sm-10">
-              <input type="tel" className="form-control" id="inputPassword3" />
-            </div>
-          </div>
-          <div className="form-group row">
-            <label htmlFor="inputPassword3" className="col col-form-label">message</label>
-            <div className="col-sm-10">
-              <textarea className="form-control" id="exampleFormControlTextarea1" rows="6" />
-            </div>
-          </div>
-          <div className="form-group row">
-            <div className="col-sm-12">
-              <button type="submit" className="btn btn-primary submit-btn">Submit</button>
-            </div>
-          </div>
+          {
+            ContactForm.map(item => {
+              return (
+                <Row key={item.name} className="form-group">
+                  <Label htmlFor={item.name} className="col col-form-label">{item.name}</Label>
+                  <Column sm={{span: 10}}>
+                    <Input type={item.type} required className="form-control" id={item.name} />
+                  </Column>
+                </Row>
+              )
+            })
+          }
+          <Row className="form-group">
+            <Label htmlFor="message" className="col col-form-label">message</Label>
+            <Column sm={{ span: 10 }}>
+              <Input type="textarea" className="form-control" id="message" rows="6" />
+            </Column>
+          </Row>
+          <Row className="form-group">
+            <Column sm={{ span: 12 }}>
+              <Button type="submit" className="btn btn-primary submit-btn">Submit</Button>
+            </Column>
+          </Row>
         </form>
       </div>
     </PageTemplate>

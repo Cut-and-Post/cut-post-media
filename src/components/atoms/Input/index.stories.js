@@ -6,12 +6,6 @@ storiesOf('Input', module)
   .add('default', () => (
     <Input />
   ))
-  .add('reverse', () => (
-    <Input reverse />
-  ))
-  .add('height', () => (
-    <Input height={100} />
-  ))
   .add('invalid', () => (
     <Input invalid />
   ))
