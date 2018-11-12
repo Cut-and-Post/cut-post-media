@@ -1,0 +1,166 @@
+{
+  "full_name": "Toby Ricketts",
+  "vendor": true,
+  "name": "Toby Ricketts",
+  "logo": "//s3.amazonaws.com/shortlist-logos/cutandpostmedia/vendor-logo/toby-ricketts/4Zwpcij6RU2B4UnsJVqK_TobyRickettsVO 2016 Promo images web-4 square.jpg",
+  "services": [
+    "Voice Over Talent",
+    "Voice Talent",
+    "Voice Overs",
+    "Voice Over Studio"
+  ],
+  "shortlisted": true,
+  "last_active": "2018-04-11T23:00:53.274Z",
+  "invited_at": "2018-04-11T17:07:39.636Z",
+  "groups": [
+    {
+      "updated_at": "2018-04-11T17:07:39.688Z",
+      "id": 8,
+      "name": "Voiceover Talent",
+      "slug": "voiceover-talent",
+      "created_by": 15
+    }
+  ],
+  "email": "toby@tobyricketts.com",
+  "status": "active",
+  "has_sign_request": false,
+  "people": [
+    {
+      "first_name": "Toby",
+      "last_name": "Ricketts",
+      "email": "toby@tobyricketts.com",
+      "avatar_color": "#580404",
+      "full_name": "Toby Ricketts",
+      "initials": "TR",
+      "slug": "u-us0kr",
+      "is_active": true,
+      "vendor": true,
+      "is_company": false,
+      "company_name": "Toby Ricketts",
+      "vendor_type": "freelancer",
+      "profile_picture_path": null,
+      "vendor_logo": "//s3.amazonaws.com/shortlist-logos/cutandpostmedia/vendor-logo/toby-ricketts/4Zwpcij6RU2B4UnsJVqK_TobyRickettsVO 2016 Promo images web-4 square.jpg",
+      "vendor_slug": "toby-ricketts"
+    }
+  ],
+  "total_contracted": [],
+  "links": {
+    "website": "http://www.tobyrickettsvoiceover.com",
+    "youtube": "https://www.youtube.com/tobyrickettsvoiceover",
+    "twitter": "https://twitter.com/TobyRicketts",
+    "facebook": "https://www.facebook.com/TobyRickettsVO/",
+    "linkedin": "https://www.linkedin.com/in/toby-ricketts-75b76b2/"
+  },
+  "rank": null,
+  "progress": 100,
+  "titles": null,
+  "location": {
+    "city": "Mangonui",
+    "objectID": "8e366c662ac82268a756a3fe35c9e548f9679976",
+    "country": "New Zealand",
+    "state": "Northland",
+    "_geoloc": {
+      "lat": -35.07378,
+      "lng": 173.5546472
+    },
+    "query": "903 Kohumaru Road, Mangonui RD1, Northland, New Zealand",
+    "administrative": "Northland"
+  },
+  "working_hours": null,
+  "custom_fields": {
+    "4": [
+      "Daytime",
+      "Evenings",
+      "Weekends"
+    ],
+    "5": [
+      "N/A"
+    ],
+    "8": [
+      "Television networks / Promos / Sizzle reels",
+      "Ad Agencies / Brands",
+      " Online / Digital",
+      "Social Media Videos",
+      "Corporate Videos"
+    ],
+    "10": [
+      "Editing",
+      "Audio Mixing"
+    ],
+    "16": "20",
+    "17": "BMW, Mars, Audi, Intel, Leica, Netflix, Google, Cathay Pacific"
+  },
+  "is_company": false,
+  "groups_managers": [],
+  "updated_by": {
+    "id": 15,
+    "first_name": "Wayne",
+    "last_name": "Arthur",
+    "email": "wayne@cutandpostmedia.com",
+    "avatar_color": "#f04e2b",
+    "full_name": "Wayne Arthur",
+    "name": "Wayne Arthur",
+    "initials": "WA",
+    "role": {
+      "bitMask": 8,
+      "title": "admin"
+    },
+    "slug": "u-wipu6",
+    "is_company": null,
+    "is_active": true,
+    "vendor": false,
+    "company_name": null,
+    "profile_picture_path": "",
+    "vendor_logo": null,
+    "vendor_slug": null,
+    "deleted": false
+  },
+  "invited_by": {
+    "id": 15,
+    "first_name": "Wayne",
+    "last_name": "Arthur",
+    "email": "wayne@cutandpostmedia.com",
+    "avatar_color": "#f04e2b",
+    "full_name": "Wayne Arthur",
+    "name": "Wayne Arthur",
+    "initials": "WA",
+    "role": {
+      "bitMask": 8,
+      "title": "admin"
+    },
+    "slug": "u-wipu6",
+    "is_company": null,
+    "is_active": true,
+    "vendor": false,
+    "company_name": null,
+    "profile_picture_path": "",
+    "vendor_logo": null,
+    "vendor_slug": null,
+    "deleted": false
+  },
+  "id": 55,
+  "vendor_type": "freelancer",
+  "is_approved": true,
+  "introduction": "There's a reason that global brands choose to work with top level professionals. Because they know that the voice that speaks on behalf of their brand is critical to them being heard, understood, and overall - believed.\nToby has been behind a microphone for over 20 years, and works at the top level helping to tell the stories that make brands great.",
+  "first_name": "Toby",
+  "last_name": "Ricketts",
+  "slug": "toby-ricketts",
+  "full_address": "903 Kohumaru Road, Mangonui RD1, Northland, New Zealand",
+  "phone_number": "+64275486297",
+  "buyer_notes": null,
+  "reminder_sent": false,
+  "accepted_by": 15,
+  "groups_count": 1,
+  "projects_count": 0,
+  "awarded_count": 0,
+  "cover_photo": null,
+  "contact_email": null,
+  "has_requested_document_expired": false,
+  "hourly_rate_currency": "USD",
+  "hourly_rate": "150.00",
+  "availability": "available",
+  "availability_updated": "2018-04-11T22:46:46.810Z",
+  "availability_requested": null,
+  "available_from": null,
+  "working_hours_none_selected": false
+}
