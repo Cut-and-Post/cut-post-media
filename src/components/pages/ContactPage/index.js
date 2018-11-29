@@ -26,20 +26,34 @@ const ContactPage = () => {
 
       <div className="container">
         <div className="contact-us-info">
-          <Heading level={6}>Address</Heading>
 
-          <address>
-            <p>420 West 42nd Street, 23rd Floor<br />New York, NY 10036</p>
-          </address>
+          <div className="contact-item__addr">
+            <Heading level={6}>Address</Heading>
 
-          <Heading level={6}>Phone</Heading>
-          <p>646.641.0423</p>
+            <address>
+              <p>420 West 42nd Street, 23rd Floor<br />New York, NY 10036</p>
+            </address>
+          </div>
 
-          <Heading level={6}>Email</Heading>
-          <p>Clients<br/>clients@cutandpostmedia.com<br/><br/>Freelancers<br/>freelancers@cutandpostmedia.com</p>
+          <div className="contact-item__phone">
+            <Heading level={6}>Phone</Heading>
+            <p>646.641.0423</p>
+          </div>
+         
+          <div className="contact-item__email">
+            <Heading level={6}>Email</Heading>
+            <br></br>
+            <p>
+              Clients<br />
+              <a href="mailto:clients@cutandpostmedia.com">clients@cutandpostmedia.com</a><br />
+              <br />Freelancers<br />
+              <a href="mailto:freelancers@cutandpostmedia.com">freelancers@cutandpostmedia.com</a>
+            </p>
+          </div>
         </div>
         
         <form className="contact-form">
+          <Heading className="mb-4" level={5}>Need more info? Want a quote? Get in Touch!</Heading>
           {
             ContactForm.map(item => {
               return (
