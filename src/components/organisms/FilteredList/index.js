@@ -10,6 +10,7 @@ const propTypes = {
   items: PropTypes.array,
   filters: PropTypes.array,
   itemClick: PropTypes.func,
+  renderItem: PropTypes.func,
 }
 
 const filtered = (items, filters) => {
@@ -116,13 +117,7 @@ class FilteredList extends React.Component {
           <div className="container">
             <Row>
               {
-                (items.length < 1) ? 'Loading' : this.filteredItems(items).map(i => {
-                  return <Column sm={{span: 6}} md={{span: 4}} lg={{span: 3}} className="thumb-col" key={i.name}>
-                    <div onClick={() => this.props.itemClick(i)}>
-                      <img src={`/images/${i.thumb}`} />
-                    </div>
-                  </Column>
-                })
+                (items.length < 1) ? 'Loading' : this.filteredItems(items).map(i => this.props.renderItem(i))
               }
             </Row>
           </div>

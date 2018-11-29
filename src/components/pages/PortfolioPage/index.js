@@ -3,7 +3,7 @@ import api from 'services/api'
 import Modal from 'react-modal'
 import VideoPlayer from 'react-player'
 
-import { PageTemplate, Hero, TextBlock, FilteredList } from 'components'
+import { PageTemplate, Hero, TextBlock, FilteredList, Column } from 'components'
 
 import './portfolio.styl'
 
@@ -128,7 +128,15 @@ export default class PortfolioPage extends React.Component {
         <FilteredList
           filters={PortfolioFilters}
           items={this.state.portfolio}
-          itemClick={this.handleItemClick}
+          renderItem={i => {
+            return (
+              <Column sm={{ span: 6 }} md={{ span: 4 }} lg={{ span: 3 }} className="thumb-col" key={i.name}>
+                <div onClick={() => this.handleItemClick(i)}>
+                  <img src={`/images/${i.thumb}`} />
+                </div>
+              </Column>
+            )
+          }}
         />
 
         <Modal

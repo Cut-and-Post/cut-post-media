@@ -1,6 +1,6 @@
 import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
-import { HomePage, SolutionsPage, NotFoundPage, AboutUsPage, PortfolioPage, TheProfilesPage, ContactPage } from 'components'
+import { HomePage, SolutionsPage, NotFoundPage, AboutUsPage, PortfolioPage, TheProfilesPage, TheProfilesDetailPage, ContactPage } from 'components'
 // import { GoogleTagManager } from 'containers'
 
 const App = () => {
@@ -22,6 +22,7 @@ const App = () => {
         />
 
         <Route path="/profiles" component={TheProfilesPage} />
+        <Route path="/profiles/:id" component={TheProfilesDetailPage} />
         <Route path="/contact" component={ContactPage} />
         <Route component={NotFoundPage} />
       </Switch>
