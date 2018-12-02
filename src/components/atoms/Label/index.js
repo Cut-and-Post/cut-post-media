@@ -5,11 +5,8 @@ const propTypes = {
   children: PropTypes.node,
 }
 
-const Label = ({ children, ...props }) => {
-  return (
-    <label {...props}>{children}</label>
-  )
-}
+const Label = ({ children, ...props }) =>
+  <label {...props}>{children}</label>
 
 Label.propTypes = propTypes
 

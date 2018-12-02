@@ -2,7 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import MultiSelect from '@khanacademy/react-multi-select';
 
-import { Row, Column, Heading } from 'components'
+import {
+  Row,
+  Column,
+  Heading
+} from 'components'
 
 import './filteredlist'
 

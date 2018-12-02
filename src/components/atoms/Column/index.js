@@ -27,7 +27,11 @@ const propTypes = {
   children: PropTypes.node,
 }
 
-const Column = ({ className, children, ...props }) => {
+const Column = ({
+  className,
+  children,
+  ...props
+}) => {
   const prefix = 'col'
   const spans = []
   const classes = []

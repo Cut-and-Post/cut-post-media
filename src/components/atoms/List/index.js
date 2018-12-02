@@ -6,9 +6,8 @@ const propTypes = {
   children: PropTypes.any,
 }
 
-const List = ({ ordered, children, ...props }) => {
-  return React.createElement(ordered ? 'ol' : 'ul', props, children)
-}
+const List = ({ ordered, children, ...props }) =>
+  React.createElement(ordered ? 'ol' : 'ul', props, children)
 
 List.propTypes = propTypes
 

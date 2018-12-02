@@ -8,7 +8,11 @@ const propTypes = {
   children: PropTypes.node,
 }
 
-const Link = ({ children, className, ...props }) => {
+const Link = ({
+  children,
+  className,
+  ...props
+}) => {
   const isActive = (match, location) => {
     if (!match) {
       return false
@@ -18,7 +22,13 @@ const Link = ({ children, className, ...props }) => {
   }
 
   if (props.to) {
-    return <NavLink to={props.to} isActive={isActive} className={className}>{children}</NavLink>
+    return <NavLink
+            to={props.to}
+            isActive={isActive}
+            className={className}
+          >
+            {children}
+          </NavLink>
   }
   
   return <a {...props}>{children}</a>

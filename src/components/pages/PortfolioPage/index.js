@@ -3,13 +3,19 @@ import api from 'services/api'
 import Modal from 'react-modal'
 import VideoPlayer from 'react-player'
 
-import { PageTemplate, Hero, TextBlock, FilteredList, Column } from 'components'
+import {
+  PageTemplate,
+  Hero,
+  TextBlock,
+  FilteredList,
+  Column
+} from 'components'
 
 import './portfolio.styl'
 
 Modal.setAppElement('#app');
 
-const PortfolioFilters = [
+const PORTFOLIO_FILTERS = [
   {
     "name": "genre",
     "title": "By Genre",
@@ -116,7 +122,13 @@ export default class PortfolioPage extends React.Component {
   }
 
   render() {
-    const { modalOpened, modalTitle, modalVideo, modalProducer, modalEditor } = this.state
+    const {
+      modalOpened,
+      modalTitle,
+      modalVideo,
+      modalProducer,
+      modalEditor
+    } = this.state
 
     return (
       <PageTemplate name="portfolio">
@@ -129,7 +141,7 @@ export default class PortfolioPage extends React.Component {
         />
 
         <FilteredList
-          filters={PortfolioFilters}
+          filters={PORTFOLIO_FILTERS}
           items={this.state.portfolio}
           renderItem={i => {
             return (

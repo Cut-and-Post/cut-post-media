@@ -12,20 +12,22 @@ const propTypes = {
   children: PropTypes.node,
 }
 
-const Hero = ({bg, title, className, children}) => {
-  const bgImg = {
-    backgroundImage: `url(/images/${bg})`
-  }
-  
-  return (
-    <div className={`page-hero jumbotron jumbotron-fluid${className ? ' ' + className : ''}`} style={bgImg}>
-      <div className="container">
-        {children}
-        {title && <Heading className="page-hero-title" level={2}>{title}</Heading>}
-      </div>
+const Hero = ({
+  bg,
+  title,
+  className,
+  children
+}) => (
+  <div
+    className={`page-hero jumbotron jumbotron-fluid${className ? ' ' + className : ''}`}
+    style={{ backgroundImage: `url(/images/${bg})` }}
+  >
+    <div className="container">
+      {children}
+      {title && <Heading className="page-hero-title" level={2}>{title}</Heading>}
     </div>
-  )
-}
+  </div>
+)
 
 Hero.propTypes = propTypes
 

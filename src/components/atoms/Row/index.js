@@ -6,13 +6,11 @@ const propTypes = {
   className: PropTypes.string,
 }
 
-const Row = ({ className, children }) => {
-  return (
-    <div className={`row${className ? ' ' + className : ''}`}>
-      {children}
-    </div>
-  )
-}
+const Row = ({ className, children }) => (
+  <div className={`row${className ? ' ' + className : ''}`}>
+    {children}
+  </div>
+)
 
 Row.propTypes = propTypes
 

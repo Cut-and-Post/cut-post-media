@@ -1,6 +1,11 @@
 import React from 'react'
 import api from 'services/api'
-import { PageTemplate, Hero, ProfileCard } from 'components'
+
+import {
+  PageTemplate,
+  Hero,
+  ProfileCard
+} from 'components'
 
 export default class TheProfilesPage extends React.Component {
   constructor() {

@@ -10,9 +10,12 @@ const propTypes = {
   children: PropTypes.node,
 }
 
-const Heading = ({ level, children, ...props }) => {
-  return React.createElement(`h${level}`, props, children)
-}
+const Heading = ({
+  level,
+  children,
+  ...props
+}) =>
+  React.createElement(`h${level}`, props, children)
 
 Heading.defaultProps = defaultProps
 Heading.propTypes = propTypes

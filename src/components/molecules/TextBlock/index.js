@@ -18,16 +18,14 @@ const propTypes = {
 
 const TextBlock = ({
   align, className, title, titleLevel, copy
-}) => {
-  return (
-    <div className={`text-block text-${align} ${className}`}>
-      <div className="container">
-        <Heading className="text-block__title" level={titleLevel}>{title}</Heading>
-        <p>{copy}</p>
-      </div>
+}) => (
+  <div className={`text-block text-${align} ${className}`}>
+    <div className="container">
+      <Heading className="text-block__title" level={titleLevel}>{title}</Heading>
+      <p>{copy}</p>
     </div>
-  )
-}
+  </div>
+)
 
 TextBlock.defaultProps = defaultProps
 TextBlock.propTypes = propTypes
