@@ -7,7 +7,10 @@
     "purpose": [
       "show launches"
     ],
-    "genre": [],
+    "genre": [
+      "african american",
+      "drama"
+    ],
     "producer": [
       "Joe Schmo"
     ],
@@ -39,7 +42,10 @@
     "purpose": [
       "show launches"
     ],
-    "genre": [],
+    "genre": [
+      "comedy",
+      "african american"
+    ],
     "producer": [
       "Lisa Smith"
     ],
@@ -52,7 +58,9 @@
     "channel": "VH1",
     "videoLink": "https://vimeo.com/169599296",
     "thumb": "daytimeDiva.png",
-    "purpose": [],
+    "purpose": [
+      "critics spots"
+    ],
     "genre": [
       "kids",
       "comedy",

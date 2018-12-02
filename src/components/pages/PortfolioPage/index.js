@@ -43,6 +43,9 @@ const PortfolioFilters = [
       },
       {
         "value": "combo/marathons"
+      },
+      {
+        "value": "show launches"
       }
     ]
   }

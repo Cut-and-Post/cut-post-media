@@ -9,7 +9,6 @@ import './filteredlist'
 const propTypes = {
   items: PropTypes.array,
   filters: PropTypes.array,
-  itemClick: PropTypes.func,
   renderItem: PropTypes.func,
 }
 
