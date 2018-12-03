@@ -58,7 +58,7 @@ const Column = ({
       )
     }
     
-    if (offset != null) classes.push(`offset${infix}-${offset}`)
+    if (offset != null) classes.push(` offset${infix}-${offset}`)
   })
 
   if (!spans.length) {

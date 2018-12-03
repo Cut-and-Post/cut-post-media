@@ -69,10 +69,10 @@ const ProfileCardStats = ({
     <div className="profile-card-stats">
       {stats.map(i => (
         <Row className="profile-stat" key={i.id}>
-          <Column xs={{ span: 12 }}>
+          <Column xs={{ span: 12 }} md={{ span: 4 }} xl={{ span: 3 }}>
             <strong className="stats-label">{i.name}:</strong>
           </Column>
-          <Column xs={{ span: 12 }}>
+          <Column xs={{ span: 12 }} md={{ span: 8 }} xl={{ span: 9 }}>
             <p>{formatItems(i.items)}</p>
           </Column>
         </Row>

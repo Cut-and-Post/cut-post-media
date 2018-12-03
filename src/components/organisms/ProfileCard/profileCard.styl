@@ -1,2 +1,33 @@
+@import "../../../stylus/variables"
+
 .profile-card
   margin 60px 0
+  text-align: center
+
+  .btn-col
+    @media (min-width: $grid-lg)
+      display block
+
+    display: none
+
+  .avatar-col
+    @media (min-width: $grid-sm)
+      margin 0
+    
+    @media (min-width: $grid-lg)
+      .btn
+        display none
+
+    max-width 220px
+    margin 0 auto
+
+  .btn
+    @media (min-width: $grid-lg)
+      margin-top 20%
+
+    color: #000;
+    background-color: #fff;
+    border-color: #fff;
+    text-transform uppercase
+    padding: 3%;
+    margin-top: 20px

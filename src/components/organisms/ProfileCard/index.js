@@ -37,9 +37,9 @@ const ProfileCard = ({
   return (
     <Row className="profile-card">
       <Column
+        className="avatar-col"
         sm={{ span: 4 }}
-        md={{ span: 3 }}
-        lg={{ span: 2 }}
+        lg={{ span: 3 }}
       >
         <ProfileCardAvatar
           name={full_name}
@@ -53,8 +53,7 @@ const ProfileCard = ({
       </Column>
       <Column
         sm={{ span: 8 }}
-        md={{ span: 3 }}
-        lg={{ span: 2 }}
+        lg={{ span: 6 }}
       >
         <ProfileCardStats
           experiences={custom_fields[8]}
@@ -63,6 +62,11 @@ const ProfileCard = ({
           skills={custom_fields[10]}
           hours={custom_fields[4]}
         />
+      </Column>
+      <Column className="btn-col" lg={{ span: 3 }}>
+        {btn &&
+          <Button type="submit" className="btn btn-primary submit-btn">View Profile</Button>
+        }
       </Column>
     </Row>
   )
