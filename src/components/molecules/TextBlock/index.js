@@ -17,7 +17,11 @@ const propTypes = {
 }
 
 const TextBlock = ({
-  align, className, title, titleLevel, copy
+  align,
+  className,
+  title,
+  titleLevel,
+  copy
 }) => (
   <div className={`text-block text-${align} ${className}`}>
     <div className="container">

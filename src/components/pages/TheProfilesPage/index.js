@@ -4,8 +4,39 @@ import api from 'services/api'
 import {
   PageTemplate,
   Hero,
+  FilteredList,
   ProfileCard
 } from 'components'
+
+const PROFILES_FILTERS = [
+  {
+    "name": "services",
+    "title": "By Services",
+    "items": [
+      {
+        "value": "Voice Over Talent"
+      },
+      {
+        "value": "Voice Talent"
+      },
+      {
+        "value": "Voice Overs"
+      }
+    ]
+  },
+  {
+    "name": "hourly_rate",
+    "title": "By Hourly Rate",
+    "items": [
+      {
+        "value": "150.00"
+      },
+      {
+        "value": "20.00"
+      }
+    ]
+  }
+]
 
 export default class TheProfilesPage extends React.Component {
   constructor() {
@@ -18,7 +49,6 @@ export default class TheProfilesPage extends React.Component {
   componentDidMount() {
     api.get('/mocks/staffing.json')
       .then(data => {
-        console.log(data);
         this.setState({
           staff: data
         })

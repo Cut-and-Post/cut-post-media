@@ -28,6 +28,7 @@ const ProfileCard = ({
   data
 }) => {
   const {
+    id,
     full_name,
     location,
     people,
@@ -48,7 +49,7 @@ const ProfileCard = ({
           avatar={people[0].profile_picture_path}
         />
         {btn &&
-          <Button type="submit" className="btn btn-primary submit-btn">View Profile</Button>
+          <Button type="submit" to={`/profiles/${id}`} className="btn btn-primary submit-btn">View Profile</Button>
         }
       </Column>
       <Column
@@ -65,7 +66,7 @@ const ProfileCard = ({
       </Column>
       <Column className="btn-col" lg={{ span: 3 }}>
         {btn &&
-          <Button type="submit" className="btn btn-primary submit-btn">View Profile</Button>
+          <Button type="submit" to={`/profiles/${id}`} className="btn btn-primary submit-btn">View Profile</Button>
         }
       </Column>
     </Row>
