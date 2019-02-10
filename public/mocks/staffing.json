@@ -158,7 +158,7 @@
     "contact_email": null,
     "has_requested_document_expired": false,
     "hourly_rate_currency": "USD",
-    "hourly_rate": "150.00",
+    "hourly_rate": ["150.00"],
     "availability": "available",
     "availability_updated": "2018-04-11T22:46:46.810Z",
     "availability_requested": null,
@@ -236,18 +236,14 @@
     "working_hours": null,
     "custom_fields": {
       "4": [
-        "Daytime",
-        "Evenings",
-        "Weekends"
+        "Daytime"
       ],
       "5": [
         "N/A"
       ],
       "8": [
         "Television networks / Promos / Sizzle reels",
-        "Ad Agencies / Brands",
         " Online / Digital",
-        "Social Media Videos",
         "Corporate Videos"
       ],
       "10": [
@@ -255,7 +251,7 @@
         "Audio Mixing"
       ],
       "16": "20",
-      "17": "BMW, Mars, Audi, Intel, Leica, Netflix, Google, Cathay Pacific"
+      "17": "BMW, Mars, Audi"
     },
     "is_company": false,
     "groups_managers": [],
@@ -324,7 +320,7 @@
     "contact_email": null,
     "has_requested_document_expired": false,
     "hourly_rate_currency": "USD",
-    "hourly_rate": "150.00",
+    "hourly_rate": ["130.00"],
     "availability": "available",
     "availability_updated": "2018-04-11T22:46:46.810Z",
     "availability_requested": null,

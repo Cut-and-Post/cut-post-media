@@ -33,6 +33,7 @@ const ProfileCard = ({
     location,
     people,
     custom_fields,
+    logo,
   } = data;
 
   return (
@@ -46,7 +47,7 @@ const ProfileCard = ({
           name={full_name}
           location={location}
           position="writer / producer"
-          avatar={people[0].profile_picture_path}
+          avatar={logo}
         />
         {btn &&
           <Button type="submit" to={`/profiles/${id}`} className="btn btn-primary submit-btn">View Profile</Button>

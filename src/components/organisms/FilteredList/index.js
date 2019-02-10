@@ -72,8 +72,14 @@ class FilteredList extends React.Component {
       filters[this.filterNames[i]] = this.state[this.filterNames[i]].map(i => i.value);
     }
 
-    if (this.state.genre.length < 1 && this.state.purpose.length < 1) {
-      return items;
+    if (this.state.genre && this.state.purpose) {
+      if (this.state.genre.length < 1 && this.state.purpose.length < 1) {
+        return items;
+      }
+    } else if (this.state.services && this.state.hourly_rate) {
+      if (this.state.services.length < 1 && this.state.hourly_rate.length < 1) {
+        return items;
+      }
     }
 
     return filtered(items, filters);

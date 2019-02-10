@@ -32,7 +32,7 @@ const PROFILES_FILTERS = [
         "value": "150.00"
       },
       {
-        "value": "20.00"
+        "value": "130.00"
       }
     ]
   }
@@ -63,11 +63,15 @@ export default class TheProfilesPage extends React.Component {
           bg="ContactUs.png"
           className="short__hero"
         />
-        <div className="container">
-          {this.state.staff.map(i => (
-            <ProfileCard key={i.id} data={i} />
-          ))}
-        </div>
+        <FilteredList
+          filters={PROFILES_FILTERS}
+          items={this.state.staff}
+          renderItem={i => {
+            return (
+              <ProfileCard key={i.id} data={i} />
+            )
+          }}
+        />
       </PageTemplate>
     )
   }
