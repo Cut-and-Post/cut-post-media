@@ -8,7 +8,7 @@ import {
   Heading
 } from 'components'
 
-import './filteredlist'
+import './filteredlist.styl'
 
 const propTypes = {
   items: PropTypes.array,

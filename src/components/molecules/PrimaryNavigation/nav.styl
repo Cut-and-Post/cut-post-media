@@ -1,4 +1,3 @@
-@import "../../../stylus/variables"
 
 activeNavLink()
   content ''
@@ -70,7 +69,7 @@ activeNavLink()
         margin 0
 
     .dropdown-menu
-      @media (max-width $grid-sm)
+      @media (max-width 576px)
         display block
 
       left 7px
@@ -87,7 +86,7 @@ activeNavLink()
           background transparent
 
         &.active
-          @media (min-width $grid-md)
+          @media (min-width 768px)
             background #7991DE
             color #fff
             font-weight 300

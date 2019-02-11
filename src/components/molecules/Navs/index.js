@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import { Link } from 'components'
 
-import './navs'
+import './navs.styl'
 
 const defaultProps = {
   vertical: false,
